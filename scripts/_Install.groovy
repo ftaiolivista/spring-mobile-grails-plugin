@@ -9,7 +9,6 @@
 //    ant.mkdir(dir:"${basedir}/grails-app/jobs")
 //
 Ant.mkdir(dir:"${basedir}/grails-app/web-app/WEB-INF/wurfl")
-Ant.copy(file:"${pluginBasedir}/grails-app/conf/wurfl/web_browsers_patch.xml",
-	todir:"${basedir}/web-app/WEB-INF/wurfl")
-Ant.copy(file:"${pluginBasedir}/grails-app/conf/wurfl/wurfl-2.0.25.zip",
+Ant.copy(
+	file:"${pluginBasedir}/grails-app/conf/wurfl/wurfl.zip",
 	todir:"${basedir}/web-app/WEB-INF/wurfl")

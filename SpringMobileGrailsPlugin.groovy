@@ -9,7 +9,7 @@ import org.springframework.mobile.device.wurfl.WurflManagerFactoryBean
 
 class SpringMobileGrailsPlugin {
 	// the plugin version
-	def version = "0.4"
+	def version = "0.5"
 	// the version or versions of Grails the plugin is designed for
 	def grailsVersion = "1.3.6 > *"
 	
@@ -39,12 +39,9 @@ Device resolver based on the Spring Mobile Library
 		
 		
 		if(config.springMobile?.deviceResolver=='wurfl'){
-			wurflManager(WurflManagerFactoryBean, '/WEB-INF/wurfl/wurfl-2.0.25.zip') { patchLocations = '/WEB-INF/wurfl/web_browsers_patch.xml' }
+			wurflManager(WurflManagerFactoryBean, '/WEB-INF/wurfl/wurfl.zip') { }
 			deviceResolver(WurflDeviceResolver, ref('wurflManager'))
-			deviceResolverHandlerInterceptor(DeviceResolverHandlerInterceptor, ref('deviceResolver'))
-			
-				
-			
+			deviceResolverHandlerInterceptor(DeviceResolverHandlerInterceptor, ref('deviceResolver'))			
 		}
 		else{
 			deviceResolver(LiteDeviceResolver)
